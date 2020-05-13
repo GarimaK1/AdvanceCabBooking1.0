@@ -1,3 +1,6 @@
+Note:
+This project requires Paypal to run. Use file "paypal-credentials" which contains sandbox details.
+
 During login:
 -- check if credentials match with ones in DB. using- "login", "authService", "userRoutes"
 -- if credentials are valid, create authorization token at backend "userRoutes.js" and
