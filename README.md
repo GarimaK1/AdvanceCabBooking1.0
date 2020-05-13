@@ -1,3 +1,9 @@
+# Refer file "garimaReadme" for notes about this project.
+
+# Refer file "paypal-credentials" for Paypal Sandbox credentials 
+ -- required to successfully complete end-to-end flow for new cab booking.
+
+
 # AdvanceCabBooking
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
