@@ -1,0 +1,29 @@
+<div class="mat-headline" fxLayout="row" fxLayoutAlign="space-between">
+  Schedule Cab Forms List View
+  <button mat-stroked-button color="primary" (click)=onRefreshClick()>Refresh</button>
+</div>
+
+<mat-accordion multi="true" *ngIf="scheduleCabForms.length > 0">
+  <mat-expansion-panel *ngFor="let scheduleCabForm of scheduleCabForms">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Form id: </span> {{scheduleCabForm.id}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p><span>Name:</span> {{scheduleCabForm.name}}</p>
+    <p><span>Phone:</span> {{scheduleCabForm.phone}}</p>
+    <p><span>Email:</span> {{scheduleCabForm.email}}</p>
+    <p><span>Pickup Date:</span> {{scheduleCabForm.pickup_date}}</p>
+    <p><span>Pickup Time:</span> {{scheduleCabForm.pickup_time}}</p>
+    <p><span>Passengers:</span> {{scheduleCabForm.passengers}}</p>
+    <p><span>Pickup Location:</span> {{scheduleCabForm.pickup_location}}</p>
+    <p><span>Drop Location:</span> {{scheduleCabForm.drop_location}}</p>
+    <mat-action-row *ngIf="userIsAuthenticated" fxLayout="row" fxLayoutAlign="space-between">
+      <a mat-stroked-button color="primary" [routerLink]="['/schedule-cab-edit/', scheduleCabForm.id]">Edit Form</a>
+      <button *ngIf="role === 'admin'" mat-stroked-button color="warn"
+        (click)="onDeleteScheduleCabForm(scheduleCabForm.id)">Delete Form</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mat-body-1" *ngIf="scheduleCabForms.length <= 0">No schedule cab forms available.</p>

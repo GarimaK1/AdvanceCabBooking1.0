@@ -1,0 +1,21 @@
+<div class="mat-headline" fxLayout="row" fxLayoutAlign="space-between">
+  Contact Forms List View
+  <button mat-stroked-button color="primary" (click)=onRefreshClick()>Refresh</button>
+</div>
+<mat-accordion multi="true" *ngIf="contactForms.length > 0">
+  <mat-expansion-panel *ngFor="let contactForm of contactForms">
+    <mat-expansion-panel-header>
+      <span>Form id: </span> {{contactForm.id}}
+    </mat-expansion-panel-header>
+    <p><span>Email:</span> {{contactForm.email}}</p>
+    <p><span>Name:</span> {{contactForm.name}}</p>
+    <p *ngIf="contactForm.phone"><span>Phone No:</span> {{contactForm.phone}}</p>
+    <p><span>Subject:</span> {{contactForm.subject}}</p>
+    <p><span>Message:</span> {{contactForm.message}}</p>
+    <mat-action-row *ngIf="userIsAuthenticated">
+      <button mat-stroked-button color="warn" (click)="onDeleteForm(contactForm.id)">Delete Form</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mat-body-1" *ngIf="contactForms.length <= 0">No contact forms available.</p>

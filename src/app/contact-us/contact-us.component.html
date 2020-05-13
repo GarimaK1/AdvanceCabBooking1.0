@@ -1,0 +1,69 @@
+<main>
+
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2rem">
+    <div fxFlex="40%" class="mat-body-1">
+      <div class="mat-headline">Contact Us</div>
+      <p class="mat-subheading-2">
+        We Look Forward to Hearing From You!
+      </p>
+      <p>
+        If you wish to schedule a cab, edit or
+      </p>
+      <p>
+        cancel booking, contact us at 987-654-3210.
+      </p>
+      <p>
+        Or visit <a class="mat-subheading-2" routerLink='/book-online'>Schedule Cab</a>
+      </p>
+      <p>
+        To leave a message, please submit this form:
+      </p>
+
+    </div>
+    <div fxFlex="60%" class="mat-subheading-2">
+      <mat-card>
+        <form #contactForm="ngForm" (submit)="onContactFormSubmission(contactForm)">
+          <mat-form-field>
+            <input matInput type="text" placeholder="Full Name" ngModel name="name" required minlength="2"
+              #fullName="ngModel">
+            <mat-error *ngIf="fullName.invalid">
+              <div *ngIf="fullName.errors.required">First name is required.</div>
+              <div *ngIf="fullName.errors.minlength">First name should have atleast
+                {{fullName.errors.minlength.requiredLength}} characters.</div>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="email" placeholder="Email" ngModel name="email" required #email="ngModel"
+              email="true">
+            <mat-error *ngIf="email.invalid">Please enter valid email</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="text" placeholder="Phone" ngModel name="phone" #phone="ngModel"
+              [pattern]="getPhoneRegex()">
+            <mat-error *ngIf="phone.invalid">Please enter valid phone number</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="text" placeholder="Subject" ngModel name="subject" required maxlength="70"
+              #subject="ngModel">
+            <mat-error *ngIf="subject.invalid">Subject is required.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <textarea matInput placeholder="Message" rows="5" ngModel name="message" required #message="ngModel">
+            </textarea>
+            <mat-error *ngIf="message.invalid">Message is required.</mat-error>
+          </mat-form-field>
+
+          <section fxLayout="row" fxLayoutAlign="space-between">
+            <button mat-stroked-button type="submit" color="primary">Submit</button>
+            <button mat-stroked-button type="reset" color="warn">Clear</button>
+          </section>
+
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</main>

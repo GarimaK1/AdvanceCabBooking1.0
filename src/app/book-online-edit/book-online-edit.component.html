@@ -1,0 +1,86 @@
+<main>
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2rem" class="mat-subheading-2">
+    <div fxFlex=30%>
+      <span class="mat-title">Edit cab booking -</span>
+      <p>Please note, you cannot change:</p>
+      <ul>
+        <li>Number of passengers</li>
+        <li>Pickup Location</li>
+        <li>Drop Location</li>
+      </ul>
+      <p>because it requires re-computation of fare</p>
+      <span>
+        <button id="first" mat-stroked-button color="primary" (click)=onBackButton()>Back to All Forms</button>
+      </span>
+    </div>
+    <div fxFlex=70%>
+      <mat-card>
+        <div class="mat-title">Edit cab booking -</div>
+        <!-- <div class="mat-title">{{ editScheduleCabFormId }}</div> -->
+        <form [formGroup]="editScheduleCabForm" (ngSubmit)=onEditScheduleCabForm()>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Your name" formControlName="name" minlength="4" required>
+            <mat-error *ngIf="editScheduleCabForm.get('name').invalid">Full name is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="tel" placeholder="Mobile number" formControlName="mobile" required>
+            <mat-error *ngIf="editScheduleCabForm.get('mobile').invalid">
+              <div *ngIf="editScheduleCabForm.get('mobile').errors.required">Phone number is required</div>
+              <div *ngIf="editScheduleCabForm.get('mobile').errors.pattern">Please enter valid phone number</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="email" placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="editScheduleCabForm.get('email').invalid">
+              <div *ngIf="editScheduleCabForm.get('email').errors.required">Email id is required</div>
+              <div *ngIf="editScheduleCabForm.get('email').errors.email">Please enter valid email id</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="myPicker" placeholder="Pickup Date"
+              formControlName="pickup_date" required>
+            <mat-datepicker-toggle matSuffix [for]="myPicker"></mat-datepicker-toggle>
+            <mat-datepicker #myPicker></mat-datepicker>
+            <mat-error *ngIf="editScheduleCabForm.get('pickup_date').invalid">
+              <div *ngIf="editScheduleCabForm.get('pickup_date').errors.min">Cabs can be scheduled for 1 week in advance
+              </div>
+              <div *ngIf="editScheduleCabForm.get('pickup_date').errors.max">Cabs can be scheduled for 1 week in advance
+              </div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="time" placeholder="Pickup Time" formControlName="pickup_time" required>
+            <mat-error *ngIf="editScheduleCabForm.get('pickup_time').invalid">Please enter correct time</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" min="1" max="8" placeholder="Passengers" formControlName="passengers"
+              required>
+            <mat-error *ngIf="editScheduleCabForm.get('passengers').invalid">
+              <div *ngIf="editScheduleCabForm.get('passengers').errors.min">Minimum 1 passenger is required.</div>
+              <div *ngIf="editScheduleCabForm.get('passengers').errors.max">Maximum 8 passengers.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Pickup Location" formControlName="pickup_loc" #pickupLoc required>
+            <mat-error *ngIf="editScheduleCabForm.get('pickup_loc').invalid">Please enter pickup address</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Drop Location" formControlName="drop_loc" #dropLoc required>
+            <mat-error *ngIf="editScheduleCabForm.get('drop_loc').invalid">Please enter drop address</mat-error>
+          </mat-form-field>
+          <span fxLayout="row" fxLayoutAlign="space-between">
+            <button mat-stroked-button type="submit" [disabled]="!editScheduleCabForm.valid">Save</button>
+            <button mat-stroked-button type="reset" color="warn">Clear</button>
+          </span>
+
+        </form>
+        <!-- <p>
+          Form value: {{editScheduleCabForm.value|json}}
+        </p>
+        <p>
+          Form status: {{editScheduleCabForm.status}}
+        </p> -->
+      </mat-card>
+    </div>
+  </div>
+</main>

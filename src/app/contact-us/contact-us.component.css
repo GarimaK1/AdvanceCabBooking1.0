@@ -1,0 +1,15 @@
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+div#alert {
+  margin-top: 1rem;
+}

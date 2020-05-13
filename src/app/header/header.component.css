@@ -1,0 +1,25 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* mat-toolbar-row:nth-of-type(2){
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4) ;
+} */
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.material-icons.md-18 { font-size: 18px;}

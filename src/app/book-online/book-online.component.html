@@ -1,0 +1,81 @@
+<main>
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2rem" class="mat-subheading-2">
+    <div fxFlex=30%>
+      <span class="mat-title">AdvanceCabBooking -</span>
+      <ul>
+        <li>We provide cabs that can</li>
+        <li>be scheduled 1 week in advance.</li>
+        <li>Our fleet consists of</li>
+        <li>Honda Accord (seats 3 people)</li>
+        <li>MINI VAN (seats 8 people)</li>
+        <li>to cover your transportation</li>
+        <li>needs within the city.</li>
+      </ul>
+    </div>
+    <div fxFlex=70%>
+      <mat-card>
+        <div class="mat-title">Schedule a Cab</div>
+        <form [formGroup]="scheduleCabForm" (ngSubmit)=onSubmitScheduleCabForm()>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Your name" formControlName="name" minlength="4" required>
+            <mat-error *ngIf="scheduleCabForm.get('name').invalid">Full name is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="tel" placeholder="Mobile number" formControlName="mobile" required>
+            <mat-error *ngIf="scheduleCabForm.get('mobile').invalid">
+              <div *ngIf="scheduleCabForm.get('mobile').errors.required">Phone number is required</div>
+              <div *ngIf="scheduleCabForm.get('mobile').errors.pattern">Please enter valid phone number</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="email" placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="scheduleCabForm.get('email').invalid">
+              <div *ngIf="scheduleCabForm.get('email').errors.required">Email id is required</div>
+              <div *ngIf="scheduleCabForm.get('email').errors.email">Please enter valid email id</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="myPicker" placeholder="Pickup Date"
+              formControlName="pickup_date" required>
+            <mat-datepicker-toggle matSuffix [for]="myPicker"></mat-datepicker-toggle>
+            <mat-datepicker #myPicker></mat-datepicker>
+            <mat-error *ngIf="scheduleCabForm.get('pickup_date').invalid">
+              <div *ngIf="scheduleCabForm.get('pickup_date').errors">Please enter correct date.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="time" placeholder="Pickup Time" formControlName="pickup_time" required>
+            <mat-error *ngIf="scheduleCabForm.get('pickup_time').invalid">Please enter correct time</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" min="1" max="8" placeholder="Passengers" formControlName="passengers"
+              required>
+            <mat-error *ngIf="scheduleCabForm.get('passengers').invalid">
+              <div *ngIf="scheduleCabForm.get('passengers').errors.min">Minimum 1 passenger is required.</div>
+              <div *ngIf="scheduleCabForm.get('passengers').errors.max">Maximum 8 passengers.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Pickup Location" formControlName="pickup_loc" #pickupLoc required>
+            <mat-error *ngIf="scheduleCabForm.get('pickup_loc').invalid">Please enter pickup address</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Drop Location" formControlName="drop_loc" #dropLoc required>
+            <mat-error *ngIf="scheduleCabForm.get('drop_loc').invalid">Please enter drop address</mat-error>
+          </mat-form-field>
+          <span fxLayout="row" fxLayoutAlign="space-between">
+            <button mat-stroked-button type="submit" [disabled]="!scheduleCabForm.valid">Submit</button>
+            <button mat-stroked-button type="clear" color="warn">Clear</button>
+          </span>
+
+        </form>
+        <!-- <p>
+          Form value: {{scheduleCabForm.value|json}}
+        </p>
+        <p>
+          Form status: {{scheduleCabForm.status}}
+        </p> -->
+      </mat-card>
+    </div>
+  </div>
+</main>

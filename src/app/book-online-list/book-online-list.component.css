@@ -1,0 +1,12 @@
+span {
+  font-weight: 500;
+}
+div {
+  display: flex;
+}
+div#alert {
+  margin-top: 1rem;
+}
+button {
+  width: 5rem;
+}

@@ -1,0 +1,9 @@
+<h4 mat-dialog-title>Error!</h4>
+<mat-dialog-content>
+  <p class="mat-body-1">{{ data.message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions fxLayoutAlign="center">
+  <button mat-button color="accent" (click)=snackBarRef.dismiss()>Dismiss</button>
+</mat-dialog-actions>
+
+<!-- Using this component to display all error messages. -->

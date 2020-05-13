@@ -1,0 +1,24 @@
+  <h4 mat-dialog-title>Complete Booking</h4>
+  <mat-dialog-content class="mat-typography">
+    <table>
+      <tr>
+        <td>Total Distance:</td>
+        <td>{{ distance }} miles</td>
+      </tr>
+      <tr>
+        <td>Total Fare:</td>
+        <td>$ {{ fare }}</td>
+      </tr>
+    </table>
+    <!-- <p>
+      Pay just $1 to confirm cab booking.
+    </p> -->
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayoutAlign="center">
+    <button mat-stroked-button color="primary" (click)=onProceedClick()>Proceed to Payment</button>
+    <button mat-stroked-button color="basic" (click)=onCancelClick()>Cancel Payment</button>
+  </mat-dialog-actions>
+  <div mat-dialog-content #paypal id="paypal">
+    <!-- Using mat-dialog-content automatically makes content scrollable. -->
+    <!-- Put paypal here. -->
+  </div>

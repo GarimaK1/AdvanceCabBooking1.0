@@ -1,0 +1,26 @@
+<div *ngIf="bookingStatus === 'success'">
+  <mat-card>
+    <mat-card-title>
+      Booking Status
+    </mat-card-title>
+    <mat-card-content>
+      Cab booked successfully! Payment received.
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-stroked-button color="primary" [routerLink]="'/book-online'">Book Again!</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div *ngIf="bookingStatus !== 'success'">
+  <mat-card>
+    <mat-card-title>
+      Booking Status
+    </mat-card-title>
+    <mat-card-content>
+      Cab booking failed for some reason.
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-stroked-button color="primary" [routerLink]="'/book-online'">Try Again!</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

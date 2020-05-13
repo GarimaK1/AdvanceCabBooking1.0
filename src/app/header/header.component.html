@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <span><a routerLink="/">AdvanceCabBooking</a></span>
+    <span class="spacer"></span>
+    <span><i class="material-icons md-18">
+        phone
+      </i></span>
+    <span>987-654-3210</span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+
+    <ul fxLayout="row wrap">
+      <li>
+        <a mat-button routerLink="/book-online" routerLinkActive="mat-accent">Schedule Cab</a>
+      </li>
+      <li>
+        <a mat-button routerLink="/fare" routerLinkActive="mat-accent">Fare Information</a>
+      </li>
+      <li>
+        <a mat-button routerLink="/areas-served" routerLinkActive="mat-accent">Areas Served</a>
+      </li>
+      <li>
+        <a mat-button routerLink="/contact-us" routerLinkActive="mat-accent">Contact Us</a>
+      </li>
+      <li *ngIf="userIsAuthenticated && role === 'admin'">
+        <a mat-button routerLink="/contact-us-list" routerLinkActive="mat-accent">View ContactUsForms</a>
+      </li>
+      <li *ngIf="userIsAuthenticated">
+        <a mat-button routerLink="/schedule-cab-list" routerLinkActive="mat-accent">View ScheduleCabForms</a>
+      </li>
+      <!-- <li *ngIf="userIsAuthenticated">
+        <a mat-button routerLink="/schedule-cab-edit" routerLinkActive="mat-accent">Edit ScheduleCabForms</a>
+      </li> -->
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Sign-Up</a>
+      </li>
+      <li *ngIf="userIsAuthenticated">
+        <button mat-button (click)=onLogout()>Logout</button>
+      </li>
+    </ul>
+  </mat-toolbar-row>
+
+</mat-toolbar>
