@@ -1,6 +1,10 @@
 Note:
 This project requires Paypal to run. Use file "paypal-credentials" which contains sandbox details.
 
+Two roles only: 'admin' and 'loggedUser'
+Admin Username: admin@123.com
+Admin Password: admin
+
 During login:
 -- check if credentials match with ones in DB. using- "login", "authService", "userRoutes"
 -- if credentials are valid, create authorization token at backend "userRoutes.js" and
