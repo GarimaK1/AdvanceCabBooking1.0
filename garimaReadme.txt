@@ -72,6 +72,32 @@ Created dist folder using command "ng build --prod".
 Created S3 bucket with public access to upload contents of dist folder.
 
 -------------------------------------------------------------------------------------------------------------
+Changes to be done in future:
+-- Remove types: ["address"] from 'book-online.component.ts' and 'book-online-edit.component.ts'
+-- Make site more responsive. Easily done using flex-layout in component css and following changes to 'app.component.css'-
+e.g.
+/* Medium devices (tablets, less than 959px)
+@media (max-width: 959px) {
+  div {
+    flex: 1 0 auto;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+}
+Large devices (desktops, 960px and up)
+@media (min-width: 960px) {
+  div {
+    flex: 1 0 auto;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 60%;
+  }
+} */
+
+-------------------------------------------------------------------------------------------------------------
 References:
 
 https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/learn/lecture/14852496?start=210#overview
