@@ -62,6 +62,16 @@ Most major errors thrown in this application are http errors, sent as response b
 Interceptor "handle" method can be used to handle incoming response errors.
 
 -------------------------------------------------------------------------------------------------------------
+Deployment Notes:
+Deployed using AWS Elastic Beanstalk for backend API and S3 for angular frontend.
+For deployment of backend:
+Created application, created environment - created environment variables, under modify software - mentioned command to start node process. In newer version of AWS, add procfile(web: node server.js) to the zipped file to upload to cloud.
+For deployment of frontend:
+Updated src/environments/enironment.prod.ts file with apiUrl.
+Created dist folder using command "ng build --prod".
+Created S3 bucket with public access to upload contents of dist folder.
+
+-------------------------------------------------------------------------------------------------------------
 References:
 
 https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/learn/lecture/14852496?start=210#overview
