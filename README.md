@@ -8,7 +8,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
-Do not use Angular 9 to use this project. Will throw error. In case you upate the dependencies, keep angular version 8.3.21.
+Do not use Angular 9 to use this project. Will throw error. 
+
+In case you upate the dependencies, run command "npm i @angular-devkit/build-angular@0.803.23" to downgrade to req angular version.
 
 ## Development server
 
