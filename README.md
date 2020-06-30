@@ -22,6 +22,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ![Payment using Paypal Checkout Smart Buttons](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreviewPaypalSmartButtons.jpg)
 
-#### Google PLaces API to Auto-Populate Addresses
+#### Google PLaces API to Auto-Populate Addresses and Find Distance to Calculate Cab Fare
 
 ![Google PLaces API to auto-populate address](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreviewGooglePlacesAPI.jpg)
