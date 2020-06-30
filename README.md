@@ -15,3 +15,7 @@ In case you upate the dependencies, run command "npm i @angular-devkit/build-ang
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Preview Images: 
+
+![Book a Cab](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreview1.png)
