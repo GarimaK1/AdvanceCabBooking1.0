@@ -19,3 +19,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ### Preview Images: 
 
 ![Book a Cab](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreview1.png)
+
+![Payment using Paypal Checkout Smart Buttons](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreviewPaypalSmartButtons.jpg)
+
+![Google API PLaces to auto-populate address](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreviewGooglePlacesAPI.jpg)
+
+![Contact Us Form](https://github.com/GarimaK1/AdvanceCabBooking_Deployed/blob/master/ImagePreviewContactUs.jpg)
