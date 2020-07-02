@@ -2,7 +2,8 @@
 
 # Refer file "paypal-credentials" for Paypal Sandbox credentials 
  -- required to successfully complete end-to-end flow for new cab booking.
-
+ 
+# Visit website: http://advancecabbooking.s3-website-us-east-1.amazonaws.com/
 
 # AdvanceCabBooking
 
@@ -10,7 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Do not use Angular 9 to use this project. Will throw error. 
 
-In case you upate the dependencies, run command "npm i @angular-devkit/build-angular@0.803.23" to downgrade to req angular version.
+In case you update the dependencies, run command "npm i @angular-devkit/build-angular@0.803.23" to downgrade to req angular version.
 
 ## Development server
 
